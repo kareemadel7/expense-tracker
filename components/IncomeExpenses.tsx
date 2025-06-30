@@ -2,7 +2,8 @@ import { getIncomeExpenses } from "@/app/actions/getIncomeExpenses";
 import { addCommas } from "@/lib/utils";
 
 const IncomeExpenses = async () => {
-    const { income, expenses } = await getIncomeExpenses();
+    const result = await getIncomeExpenses();
+    const { income, expenses } = 'error' in result ? { income: 0, expenses: 0 } : result;
     return (
         <div className="inc-exp-container">
             <div>
