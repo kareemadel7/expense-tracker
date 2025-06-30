@@ -10,7 +10,7 @@ const AddTransaction = () => {
         if (result.error) {
             toast.error(result.error);
         } else {
-            toast.success("Transaction added:", result.data);
+            toast.success("Transaction added successfully!");
         }
     }
     return (
